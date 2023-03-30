@@ -96,6 +96,8 @@ class ThirdApplicationTests {
 	void contextLoads8() {
 		Optional<Question> oq = this.questionRepository.findById(1);
 		assertTrue(oq.isPresent());
+//		oq.orElseThrow(()-> new RuntimeException("해당 질문 없음"));
+//		동일한 결과를 얻을 수 있음. orElseThrow()를 더 자주 쓰자
 		Question q = oq.get();
 		this.questionRepository.delete(q);
 	}
