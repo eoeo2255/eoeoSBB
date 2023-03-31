@@ -33,16 +33,16 @@ class ThirdApplicationTests {
 		this.questionRepository.save(q);
 
 		Question q2 = new Question();
-		q.setTitle("두번째 질문");
-		q.setContent("데이터 만들기");
-		q.setCreateDate(LocalDateTime.now());
-		this.questionRepository.save(q);
+		q2.setTitle("두번째 질문");
+		q2.setContent("데이터 만들기");
+		q2.setCreateDate(LocalDateTime.now());
+		this.questionRepository.save(q2);
 
 		Question q3 = new Question();
-		q.setTitle("세번째 질문");
-		q.setContent("조회용 데이터");
-		q.setCreateDate(LocalDateTime.now());
-		this.questionRepository.save(q);
+		q3.setTitle("세번째 질문");
+		q3.setContent("조회용 데이터");
+		q3.setCreateDate(LocalDateTime.now());
+		this.questionRepository.save(q3);
 	}
 
 	@Test
