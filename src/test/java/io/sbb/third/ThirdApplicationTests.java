@@ -64,20 +64,20 @@ class ThirdApplicationTests {
 	@Test
 	@DisplayName("제목으로 질문 조회")
 	void contextLoads4() {
-		Question oq = this.questionRepository.findBySubject("두번째 질문");
+		Question oq = this.questionRepository.findByTitle("두번째 질문");
 
 	}
 
 	@Test
 	@DisplayName("제목과 내용으로 질문 조회")
 	void contextLoads5() {
-		Question oq = this.questionRepository.findBySubjectAndContent("세번째 질문", "조회용 데이터");
+		Question oq = this.questionRepository.findByTitleAndContent("세번째 질문", "조회용 데이터");
 	}
 
 	@Test
 	@DisplayName("제목의 특정 문자열로 질문 조회")
 	void contextLoads6() {
-		List<Question> qlist = this.questionRepository.findBySubjectLike("질문");
+		List<Question> qlist = this.questionRepository.findByTitleLike("질문");
 		Question q = qlist.get(0);
 	}
 
