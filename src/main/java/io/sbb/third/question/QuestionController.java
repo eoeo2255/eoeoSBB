@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RequestMapping("/question")
+@RequestMapping("/question") // 겹치는 URL을 클래스가 고정시킨다.
 @RequiredArgsConstructor
 @Controller
 public class QuestionController {
