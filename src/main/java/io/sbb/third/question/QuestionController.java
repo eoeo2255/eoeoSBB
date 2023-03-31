@@ -1,11 +1,12 @@
 package io.sbb.third.question;
 
+import io.sbb.third.QuestionForm;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,7 +37,19 @@ public class QuestionController {
         return "question_detail";
     }
 
+    @GetMapping("/create")
+    public String createQ(QuestionForm questionForm) {
+        return "question_form";
+    }
 
+    @PostMapping("/create")   // 폼에서 받은 정보를 service에 넘김
+    public String createQ(@Valid QuestionForm questionForm, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "question_form"; // 입력값이 비어있거나 설정한 기준에 맞지 않는 경우. 경고창이 뜬 폼 화면을 유지
+        }
+        this.questionService.saveQ(questionForm.getTitle(), questionForm.getContent());
+        return "redirect:/question/list";
+    }
 
 
 

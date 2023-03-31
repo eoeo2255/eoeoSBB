@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,13 @@ public class QuestionService {
         }
     }
 
-
+    public void saveQ(String title, String content){ //컨트롤러가 받은 정보를 DB에 저장
+        Question q = new Question();
+        q.setTitle(title);
+        q.setContent(content);
+        q.setCreateDate(LocalDateTime.now());
+        this.questionRepository.save(q);
+    }
 
 
 }

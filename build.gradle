@@ -33,6 +33,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' // 타임리프
 
+	implementation 'org.springframework.boot:spring-boot-starter-validation' // 화면에서 전달받은 입력 값 검증
+
 
 }
 

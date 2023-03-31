@@ -1,7 +1,8 @@
-package io.sbb.third.question;
+package io.sbb.third.answer;
 
 import io.sbb.third.answer.Answer;
 import io.sbb.third.answer.AnswerRepository;
+import io.sbb.third.question.Question;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
 package io.sbb.third.answer;
 
-import io.sbb.third.question.AnswerService;
 import io.sbb.third.question.Question;
 import io.sbb.third.question.QuestionService;
 import lombok.RequiredArgsConstructor;
